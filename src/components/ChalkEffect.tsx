@@ -1,4 +1,5 @@
 export function ChalkEffectFilter() {
+  const seed = Math.floor(Math.random() * 1000);
   return (
     <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
       <filter
@@ -11,20 +12,20 @@ export function ChalkEffectFilter() {
       >
         <feTurbulence
           baseFrequency="0.72065"
-          seed="115"
+          seed={seed}
           result="result1"
           numOctaves="1"
           type="turbulence"
         />
         <feDisplacementMap
-          scale="5.5"
+          scale="4.5"
           yChannelSelector="G"
           in2="result1"
           xChannelSelector="R"
           in="SourceGraphic"
         />
-        <feOffset result="result2" dx="0" dy="0" />
-        <feGaussianBlur stdDeviation="0.7050" />
+        <feOffset result="result2" dx="-2" dy="-2" />
+        <feGaussianBlur stdDeviation="0.6500" />
       </filter>
     </svg>
   );
