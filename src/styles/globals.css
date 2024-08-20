@@ -1,0 +1,15 @@
+@import "lxgw-wenkai-webfont/lxgwwenkai-regular.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-chalkboard{
+    background-image: url("images/chalkboard.png");
+    background-repeat: repeat;
+}
+
+
+.font-default{
+    font-family: lxgw wenkai, Roboto, lucida grande, lucida sans unicode, lucida, helvetica, hiragino sans gb, microsoft yahei, wenquanyi micro hei, sans-serif;
+}
