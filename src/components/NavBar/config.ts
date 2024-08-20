@@ -7,7 +7,7 @@ export const navigator_links = [
   },
   {
     name: "TimeLine",
-    href: "/time-line",
+    href: "/timeline",
   },
   {
     name: 'Category',

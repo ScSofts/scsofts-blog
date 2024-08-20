@@ -23,16 +23,16 @@ export default function PageNotFound() {
       </Head>
       <main className="bg-chalkboard flex min-h-screen flex-col items-center justify-center">
 
-        <ApplyChalkEffect>
+        <span>
           <h1 className="select-none text-7xl text-[wheat] font-bold">
             <span className={"text-red-400"}>404</span>
             {" Page Not Found"}
           </h1>
-        </ApplyChalkEffect>
+        </span>
 
-        <ApplyChalkEffect className={'mt-12'}>
+        <span className={'mt-12'}>
           <Link href={'#'} onClick={goBackOrHome} className={"text-blue-600 underline underline-offset-8 text-4xl"}>Go Back</Link>
-        </ApplyChalkEffect>
+        </span>
       </main>
     </>
   );

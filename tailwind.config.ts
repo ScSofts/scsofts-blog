@@ -1,5 +1,6 @@
 import { type Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
+import TailwindScrollbar from "tailwind-scrollbar";
 
 export default {
   mode: "jit",
@@ -11,5 +12,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    TailwindScrollbar({ nocompatible: true }),
+  ],
 } satisfies Config;

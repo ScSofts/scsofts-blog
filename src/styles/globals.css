@@ -13,3 +13,7 @@
 .font-default{
     font-family: lxgw wenkai, Roboto, lucida grande, lucida sans unicode, lucida, helvetica, hiragino sans gb, microsoft yahei, wenquanyi micro hei, sans-serif;
 }
+
+.scrollbar-filter::-webkit-scrollbar {
+    filter: url(#chalk);
+}

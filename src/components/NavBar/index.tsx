@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function NavBar() {
   return (
-    <nav className="absolute left-0 right-0 top-0 w-[100vw] text-3xl">
+    <nav className="absolute left-0 right-0 top-0 text-3xl z-10">
       <ApplyChalkEffect className={"flex place-content-between pl-7 pr-7 pt-2"}>
         <Link href={"/"}>
           <Image src={"/favicon.png"} width={'48'} height={'48'} className={"w-12 h-12 border-cyan-600 border-2 hover:border-4 active:border-0"} alt={"Logo"}/>
