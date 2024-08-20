@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { ApplyChalkEffect, ChalkEffectFilter } from "@/components/ChalkEffect";
+import { ApplyChalkEffect } from "@/components/ChalkEffect";
 import Link from "next/link";
 
 function goBackOrHome() {
