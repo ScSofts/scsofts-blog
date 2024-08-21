@@ -17,3 +17,20 @@
 .scrollbar-filter::-webkit-scrollbar {
     filter: url(#chalk);
 }
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.cursor-pointer{
+    cursor: url('./cursors/Chalk.cur') 0 0, auto;
+}
+
+a:hover{
+    cursor: url('./cursors/Chalk.cur') 0 0, auto;
+}
+
+.\[\&_span\]\:cursor-pointer span{
+    cursor: url('./cursors/Chalk.cur') 0 0, auto !important;
+}

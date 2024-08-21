@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { config } from "@/config";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <Head>
@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main className="bg-chalkboard flex min-h-screen flex-col items-center justify-center">
-        <h1 className="font-chalk select-none text-7xl font-bold">
+        <h1 className="font-chalk select-none text-7xl font-bold text-center">
           <span className={"text-[#494656]"}>
             {"Welcome "}
           </span>

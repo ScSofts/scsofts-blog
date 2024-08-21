@@ -13,21 +13,21 @@ export function ChalkEffectFilter() {
         y="-0.5"
       >
         <feTurbulence
-          baseFrequency="0.32065"
+          baseFrequency="0.6065"
           seed={255}
           result="result1"
-          numOctaves="4"
+          numOctaves="1"
           type="turbulence"
         />
         <feDisplacementMap
-          scale="2.5"
+          scale="1.5"
           yChannelSelector="G"
           in2="result1"
           xChannelSelector="R"
           in="SourceGraphic"
         />
         <feOffset result="result2" dx="-1" dy="-1" />
-        <feGaussianBlur stdDeviation="0.4500" />
+        <feGaussianBlur stdDeviation="0.4250" />
       </filter>
     </svg>
   );

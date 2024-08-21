@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { ApplyChalkEffect } from "@/components/ChalkEffect";
 import Link from "next/link";
 
 function goBackOrHome() {
@@ -31,7 +30,7 @@ export default function PageNotFound() {
         </span>
 
         <span className={'mt-12'}>
-          <Link href={'#'} onClick={goBackOrHome} className={"text-blue-600 underline underline-offset-8 text-4xl"}>Go Back</Link>
+          <Link href={'#'} onClick={goBackOrHome} className={"text-blue-600 underline underline-offset-8 text-4xl hover:[filter:grayscale(60%)]"}>Go Back</Link>
         </span>
       </main>
     </>
