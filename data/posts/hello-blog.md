@@ -1,4 +1,4 @@
-!tags: C++ JavaScript
+!tags: C++ , JavaScript
 !date: 2024-8-21 19:22
 !title: Hello Blog
 !description: This is a blog post to test my blog system.

@@ -2,16 +2,17 @@ import Head from "next/head";
 import { config } from "@/config";
 import CategoryTagCloud from "@/components/CategoryTagCloud";
 import { type Tag } from "react-tagcloud";
+import { fetchTags } from "@/utils/fetchTags";
+import { fetchPosts } from "@/utils/fetchPosts";
 
-export function getStaticProps() {
-  const tags: Array<Tag> = [
-    { value: "React", count: 10 },
-    { value: "TypeScript", count: 7 },
-    { value: "JavaScript", count: 5 },
-    { value: "TailwindCSS", count: 3 },
-    { value: "Next.js", count: 2 },
-    { value: "Node.js", count: 1 },
-  ];
+export async function getStaticProps() {
+  const posts = await fetchPosts();
+  const tag_keys = await fetchTags(posts);
+  const tags: Array<Tag> = tag_keys
+    .map((tag) => ({
+      value: tag,
+      count: posts.filter((post) => post.tags.includes(tag)).length
+    }));
 
   return {
     props: {
@@ -38,8 +39,8 @@ export default function CategoryPage({ tags }: CategoryPageProps) {
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <main className="bg-chalkboard flex min-h-screen flex-col items-center justify-center overflow-y-hidden min-w-full">
-        <h1 className="text-4xl md:text-5xl 2xl:text-7xl font-bold text-fuchsia-300">
+      <main className="bg-chalkboard flex min-h-screen min-w-full flex-col items-center justify-center overflow-y-hidden">
+        <h1 className="text-4xl font-bold text-fuchsia-300 md:text-5xl 2xl:text-7xl">
           <TagIcon />
           Categories
         </h1>
@@ -57,7 +58,7 @@ const TagIcon = () => (
     viewBox="0 0 28 28"
     strokeWidth={2.5}
     stroke="currentColor"
-    className="mr-4 inline size-12 lg:size-16 text-cyan-400"
+    className="mr-4 inline size-12 text-cyan-400 lg:size-16"
   >
     <path
       strokeLinecap="round"
