@@ -4,8 +4,9 @@ import "@/styles/globals.css";
 import { NavBar } from "@/components/NavBar";
 import { chalk_filter, ChalkEffectFilter } from "@/components/ChalkEffect";
 import GoTop from "@/components/GoTop";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import Head from "next/head";
+import * as ReactDOM from "react-dom/client";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   const scrollbar = " scrollbar scrollbar-thin [scroll-behavior:smooth] scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-blue-600 scrollbar-track-gray-800 ";
@@ -22,7 +23,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <div
         ref={viewRef}
         className={
-          chalk_filter + "font-default h-[100vh] overflow-y-auto" + scrollbar
+          "font-default h-[100vh] overflow-y-auto" + scrollbar
         }
       >
         <Component {...pageProps} />
@@ -32,3 +33,11 @@ const MyApp: AppType = ({ Component, pageProps }) => {
 };
 
 export default MyApp;
+
+
+if( typeof window !== "undefined" ) {
+  // export React and ReactDOM to runtime
+  window.react = React;
+  window.reactDOM = ReactDOM;
+}
+

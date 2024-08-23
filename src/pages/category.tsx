@@ -4,15 +4,15 @@ import CategoryTagCloud from "@/components/CategoryTagCloud";
 import { type Tag } from "react-tagcloud";
 import { fetchTags } from "@/utils/fetchTags";
 import { fetchPosts } from "@/utils/fetchPosts";
+import { ApplyChalkEffect } from "@/components/ChalkEffect";
 
 export async function getStaticProps() {
   const posts = await fetchPosts();
   const tag_keys = await fetchTags(posts);
-  const tags: Array<Tag> = tag_keys
-    .map((tag) => ({
-      value: tag,
-      count: posts.filter((post) => post.tags.includes(tag)).length
-    }));
+  const tags: Array<Tag> = tag_keys.map((tag) => ({
+    value: tag,
+    count: posts.filter((post) => post.tags.includes(tag)).length,
+  }));
 
   return {
     props: {
@@ -39,14 +39,16 @@ export default function CategoryPage({ tags }: CategoryPageProps) {
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <main className="bg-chalkboard flex min-h-screen min-w-full flex-col items-center justify-center overflow-y-hidden">
-        <h1 className="text-4xl font-bold text-fuchsia-300 md:text-5xl 2xl:text-7xl">
-          <TagIcon />
-          Categories
-        </h1>
-        <hr className="m-8 w-[45rem]" />
-        <CategoryTagCloud tags={tags} />
-      </main>
+      <ApplyChalkEffect>
+        <main className="bg-chalkboard flex min-h-screen min-w-full flex-col items-center justify-center overflow-y-hidden">
+          <h1 className="text-4xl font-bold text-fuchsia-300 md:text-5xl 2xl:text-7xl">
+            <TagIcon />
+            Categories
+          </h1>
+          <hr className="m-8 w-[45rem]" />
+          <CategoryTagCloud tags={tags} />
+        </main>
+      </ApplyChalkEffect>
     </>
   );
 }

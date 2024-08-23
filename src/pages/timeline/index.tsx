@@ -31,27 +31,24 @@ export default function TimeLinePage({ contents }: TimeLinePageProps) {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main className="bg-chalkboard flex min-h-screen flex-col items-center justify-center overflow-y-hidden">
-        <div
-          className={
-            "flex flex-col place-content-evenly items-center justify-center pt-24"
-          }
-        >
-          {/* Apply chalk effect filter to title again, intend to improve its visual experience. */}
-          <ApplyChalkEffect>
-            <h1 className="bold text-6xl font-bold italic text-gray-200">
-              <ClockIcon /> Time Line
-            </h1>
-          </ApplyChalkEffect>
-          <hr className="m-8 w-[45rem]" />
-          <TimeLine contents={contents} />
-        </div>
+          <div
+            className={
+              "flex flex-col place-content-evenly items-center justify-center pt-24"
+            }
+          >
+            {/* Apply chalk effect filter to title again, intend to improve its visual experience. */}
+            <ApplyChalkEffect>
+              <h1 className="bold text-6xl font-bold italic text-gray-200">
+                <ClockIcon /> Time Line
+              </h1>
+            </ApplyChalkEffect>
+            <hr className="m-8 w-[45rem]" />
+            <TimeLine contents={contents} />
+          </div>
       </main>
     </>
   );
 }
-
-
-
 
 export const ClockIcon = () => (
   <svg

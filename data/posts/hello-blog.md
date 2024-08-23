@@ -31,4 +31,4 @@ console.log("Hello, Blog!");
 
 [Link to Google](https://www.google.com)
 
-![Image](imgs/picture1.png)
+![Image](../../public/statics/imgs/picture1.png)
